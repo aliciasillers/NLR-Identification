@@ -16,7 +16,7 @@ Runs NLR-Annotator and returns results in text and gff format. The text file lis
 
 2. 
 
-Looks for class-specific motifs and sorts nlr loci into CNLs, TNLs, and Novel Architecture NLRs (NANLs). Results are reported in three separate bed files.
+Looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NANLs), and other NLRs (XNLs). Results are reported in four separate bed files.
 
 3. 
 
