@@ -1,6 +1,6 @@
 # NLR-Identification-and-Visualization
 
-This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR Classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the pipeline is being carried out separately for each haplotypes. 
+This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the pipeline is being carried out separately for each haplotype of the strawberry genome.
 
 ## Conda Environment
 
