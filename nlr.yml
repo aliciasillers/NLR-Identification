@@ -6,4 +6,4 @@ dependencies:
  - r-tidyverse
  - r-reshape
  - r-chromomap
-
+ - ucsc-fasize
