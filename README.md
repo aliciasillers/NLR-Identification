@@ -18,15 +18,15 @@ Runs NLR-Annotator and returns results in text and gff format. The text file lis
 
 2. nlrclass.sh
 
-Runs an R scrip that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NANLs), and other NLRs (XNLs). Results are reported in four separate bed files.
+Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NANLs), and other NLRs (XNLs). Results are reported in four separate bed files.
 
 3. intersect.sh
 
-Intersects each bed file with the genome annotation and returns a list of genes
+Intersects each bed file with the genome annotation and returns a bed file of genes and their coordinates
 
 ## Visualize Loci & Genes Across the Genome
 
-
-Create chromosome coordinate file
+4. chrsize.sh
+Creates chromosome coordinate file needed for ChromoMap
 
 Visualize with ChromoMap
