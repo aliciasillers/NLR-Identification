@@ -13,10 +13,10 @@
 
 module load bedtools2
 
-bedtools intersect -wa -a farr1.gene_models_updated.gff -b nanl.bed | grep 'gene' | awk -F'\t|=|;' '{print$10}' > nanl_genes.txt
+bedtools intersect -wa -a farr1.gene_models_updated.gff -b nanl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > nanl_genes.bed
 
-bedtools intersect -wa -a farr1.gene_models_updated.gff -b cnl.bed | grep 'gene'  | awk -F'\t|=|;' '{print$10}' > cnl_genes.txt
+bedtools intersect -wa -a farr1.gene_models_updated.gff -b cnl.bed | grep 'gene'  | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > cnl_genes.bed
 
-bedtools intersect -wa -a farr1.gene_models_updated.gff -b tnl.bed | grep 'gene' | awk -F'\t|=|;' '{print$10}' > tnl_genes.txt
+bedtools intersect -wa -a farr1.gene_models_updated.gff -b tnl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > tnl_genes.bed
 
-bedtools intersect -wa -a farr1.gene_models_updated.gff -b xnl.bed | grep 'gene' | awk -F'\t|=|;' '{print$10}' > xnl_genes.txt
+bedtools intersect -wa -a farr1.gene_models_updated.gff -b xnl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > xnl_genes.bed

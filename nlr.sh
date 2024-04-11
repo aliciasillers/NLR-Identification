@@ -9,8 +9,10 @@
 #SBATCH --error=NLR.err # File to which STDERR will be written
 #SBATCH --mail-type=END,FAIL # Type of email notification- BEGIN,END,FAIL,ALL
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
-#SBATCH --time=1-00:00:00
+#SBATCH --time=3-00:00:00
 
 module load jdk
 
-java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.out.txt -b nlr.out.bed -g nlr.out.gff -a out.motif.msa.fa
+java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1_phase1.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.hapa.out.txt -g nlr.hapa.out.gff
+
+java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1_phase2.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.hapb.out.txt -g nlr.hapb.out.gff
