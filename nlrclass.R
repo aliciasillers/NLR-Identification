@@ -7,9 +7,9 @@ nlra <- read.delim("nlr.hapa.out.txt", header = FALSE, sep = '\t')
 nlrb <- read.delim("nlr.hapb.out.txt", header = FALSE, sep = '\t')
 
 #filter nlrs by motifs
-cnla <- nlra %>% filter(grepl('motif_2|motif_6', V7)
+cnla <- nlra %>% filter(grepl('motif_2|motif_6', V7))
 tnla <- nlra %>% filter(grepl('motif_13|motif_15|motif_18', V7))
-cnlb <- nlrb %>% filter(grepl('motif_2|motif_6', V7)
+cnlb <- nlrb %>% filter(grepl('motif_2|motif_6', V7))
 tnlb <- nlrb %>% filter(grepl('motif_13|motif_15|motif_18', V7))
 
 #find nlrs present in neither and both data frames
