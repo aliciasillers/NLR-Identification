@@ -13,6 +13,6 @@
 
 module load jdk
 
-java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1_phase1.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.hapa.out.txt -g nlr.hapa.out.gff
+java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1_phase1.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.hapa.out.txt -g nlr.hapa.out.gff -a hapa.motif.msa.fa
 
-java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1_phase2.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.hapb.out.txt -g nlr.hapb.out.gff
+java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1_phase2.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.hapb.out.txt -g nlr.hapb.out.gff -a hapb.motif.msa.fa
