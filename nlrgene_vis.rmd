@@ -1,0 +1,105 @@
+---
+title: "nlr_gene_vis.rmd"
+author: "Alicia Sillers"
+date: "2024-03-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(reshape)
+```
+
+read in data
+```{r}
+#nlrgc <- read.delim("nlr_intersect2.bed", header = FALSE, sep = '\t')
+nlrgenes <- read.delim("nlr_genes.bed", header = FALSE, sep = '\t')
+nanlgenesa <- read.delim("nanlgenesa.bed", header = FALSE, sep = '\t')
+nanlgenesb <- read.delim("nanlgenesb.bed", header = FALSE, sep = '\t')
+nanlall <- rbind(nanlgenesa, nanlgenesb)
+rpkm <- read.delim("../RNAseq_Michael/rpkm.tsv", header = TRUE, sep = '\t')
+```
+
+plot1
+```{r}
+hist(nlrgc$V13, breaks = 20, xlab = "Number of Genes Intersected", main = "Genes Spanned by Each NLR Locus", col = "light blue")
+```
+
+get rpkm for genes intersecting nlr loci
+```{r}
+nlrgenes <- nlrgenes %>% separate(V10, c('V10', 'V11'), sep = ";")
+nlrgenes$V10 <- gsub(pattern = "^ID=", replacement = "", nlrgenes$V10)
+rpkm <- rpkm %>% filter(counts.gene %in% nanlall$V4)
+rpkm <- melt(rpkm)
+samplekey <- data.frame(variable = c("ERR1817363", "ERR1817364", "ERR1817365", "ERR1817366", "ERR1817367", "ERR1817368", "SRR10076578", "SRR10076579", "SRR10076584", "SRR10076587", "SRR11794975", "SRR11794980", "SRR5241935", "SRR5241937", "SRR5241942", "SRR5826131", "SRR5826134", "SRR5826136", "SRR5826138", "SRR6995967", "SRR6995969", "SRR6995971", "SRR7157738", "SRR7157740", "SRR8298763", "SRR8298764", "SRR8298765", "SRR8298766", "SRR8298767", "SRR8298768", "SRR8298769", "SRR8298770", "SRR8298771", "SRR8298772"), sample = c("Leaf 1", "Leaf 2", "Leaf 3", "Root 1", "Root 2", "Root 3", "Sunnyberry Whole Fruit 1", "Sunnyberry Whole Fruit 2", "Kingsberry Whole Fruit 1", "Kingsberry Whole Fruit 2", "Leaf XANTH 1", "Leaf XANTH 2", "Leaf COLL 96h", "Leaf COLL 72h", "Leaf COLL 24h", "Toyonoka Green Fruit", "Toyonoka White Fruit", "Toyonoka Turning Fruit", "Toyonoka Red Fruit", "Hongjia Green Fruit", "Hongjia Turning Fruit", "Hongjia Red Fruit", "Leaf SA 1", "Leaf SA 2", "Camarosa Runner", "Camarosa Leaf MJ 24hr", "Camarosa Leaf MJ 4hr", "Camarosa Leaf MJ 30min", "Camarosa Leaf Night", "Camarosa Leaf Day", "Camarosa Flower Anthesis", "Camarosa Flower Bud", "Camarosa Root Salt", "Camarosa Root"))
+samplelist <- c("Leaf 1", "Leaf 2", "Leaf 3", "Root 1", "Root 2", "Root 3", "Leaf XANTH 1", "Leaf XANTH 2", "Leaf COLL 96h", "Leaf COLL 72h", "Leaf COLL 24h", "Leaf SA 1", "Leaf SA 2", "Camarosa Root Salt")
+rpkm <- full_join(rpkm, samplekey, by = "variable")
+filtrpkm <- rpkm %>% filter(sample %in% samplelist)
+colnames(filtrpkm) <- c("gene", "variable", "value", "sample")
+filtrpkm$logvalue <- log(filtrpkm$value)
+filtrpkm <- filtrpkm[order(-filtrpkm$logvalue),]
+```
+
+plot2
+```{r}
+png("nanlr_logscale.png", width = 30, height = 16, units = "cm", res = 900)
+
+myplot <- ggplot(filtrpkm, aes(gene, sample)) + geom_tile(aes(fill = log(value))) + scale_fill_gradient(low = "#001941", high = "#FFBF00") + labs(title = "Expression of Predicted NLRs with Novel Domain Architecture", x = "Gene", y = "Tissue/Treatment") + theme(axis.text.x = element_text(angle =45, hjust = 1))
+
+print(myplot)
+dev.off()
+```
+
+
+part 2: sorting gene lists by expression levels
+
+```{r}
+rpkm <- read.delim("../RNAseq_Michael/rpkm.tsv", header = TRUE, sep = '\t')
+rpkm <- melt(rpkm)
+samplekey <- data.frame(variable = c("ERR1817363", "ERR1817364", "ERR1817365", "ERR1817366", "ERR1817367", "ERR1817368", "SRR10076578", "SRR10076579", "SRR10076584", "SRR10076587", "SRR11794975", "SRR11794980", "SRR5241935", "SRR5241937", "SRR5241942", "SRR5826131", "SRR5826134", "SRR5826136", "SRR5826138", "SRR6995967", "SRR6995969", "SRR6995971", "SRR7157738", "SRR7157740", "SRR8298763", "SRR8298764", "SRR8298765", "SRR8298766", "SRR8298767", "SRR8298768", "SRR8298769", "SRR8298770", "SRR8298771", "SRR8298772"), sample = c("Leaf 1", "Leaf 2", "Leaf 3", "Root 1", "Root 2", "Root 3", "Sunnyberry Whole Fruit 1", "Sunnyberry Whole Fruit 2", "Kingsberry Whole Fruit 1", "Kingsberry Whole Fruit 2", "Leaf XANTH 1", "Leaf XANTH 2", "Leaf COLL 96h", "Leaf COLL 72h", "Leaf COLL 24h", "Toyonoka Green Fruit", "Toyonoka White Fruit", "Toyonoka Turning Fruit", "Toyonoka Red Fruit", "Hongjia Green Fruit", "Hongjia Turning Fruit", "Hongjia Red Fruit", "Leaf SA 1", "Leaf SA 2", "Camarosa Runner", "Camarosa Leaf MJ 24hr", "Camarosa Leaf MJ 4hr", "Camarosa Leaf MJ 30min", "Camarosa Leaf Night", "Camarosa Leaf Day", "Camarosa Flower Anthesis", "Camarosa Flower Bud", "Camarosa Root Salt", "Camarosa Root"))
+samplelist <- c("Leaf 1", "Leaf 2", "Leaf 3", "Leaf XANTH 1", "Leaf XANTH 2", "Leaf COLL 96h", "Leaf COLL 72h", "Leaf COLL 24h", "Leaf SA 1", "Leaf SA 2")
+rpkm <- full_join(rpkm, samplekey, by = "variable")
+filtrpkm <- rpkm %>% filter(sample %in% samplelist)
+colnames(filtrpkm) <- c("gene", "variable", "value", "sample")
+
+#hapa
+cnla <- read.delim("cnlgenesa.bed", sep="\t", header = FALSE)
+cnlaexp <- filtrpkm %>% filter(gene %in% cnla$V4)
+cnlaexp <- cnlaexp[order(-cnlaexp$value),] 
+cnlatopexp <- cnlaexp[1:30,]
+tnla <- read.delim("tnlgenesa.bed", sep="\t", header = FALSE)
+tnlaexp <- filtrpkm %>% filter(gene %in% tnla$V4)
+tnlaexp <- tnlaexp[order(-tnlaexp$value),]
+tnlatopexp <- tnlaexp[1:30,]
+nanla <- read.delim("nanlgenesa.bed", sep="\t", header = FALSE)
+nanlaexp <- filtrpkm %>% filter(gene %in% nanla$V4)
+nanlaexp <- nanlaexp[order(-nanlaexp$value),]
+nanlatopexp <- nanlaexp[1:30,]
+xnla <- read.delim("xnlgenesa.bed", sep="\t", header = FALSE)
+xnlaexp <- filtrpkm %>% filter(gene %in% xnla$V4)
+xnlaexp <- xnlaexp[order(-xnlaexp$value),]
+xnlatopexp <- xnlaexp[1:30,]
+
+#hapb
+cnlb <- read.delim("cnlgenesb.bed", sep="\t", header = FALSE)
+cnlbexp <- filtrpkm %>% filter(gene %in% cnlb$V4)
+cnlbexp <- cnlbexp[order(-cnlbexp$value),]
+cnlbtopexp <- cnlbexp[1:30,]
+tnlb <- read.delim("tnlgenesb.bed", sep="\t", header = FALSE)
+tnlbexp <- filtrpkm %>% filter(gene %in% tnlb$V4)
+tnlbexp <- tnlbexp[order(-tnlbexp$value),]
+tnlbtopexp <- tnlbexp[1:30,]
+nanlb <- read.delim("nanlgenesb.bed", sep="\t", header = FALSE)
+nanlbexp <- filtrpkm %>% filter(gene %in% nanlb$V4)
+nanlbexp <- nanlbexp[order(-nanlbexp$value),]
+nanlbtopexp <- nanlbexp[1:30,]
+xnlb <- read.delim("xnlgenesb.bed", sep="\t", header = FALSE)
+xnlbexp <- filtrpkm %>% filter(gene %in% xnlb$V4)
+xnlbexp <- xnlbexp[order(-xnlbexp$value),]
+xnlbtopexp <- xnlbexp[1:30,]
+```
+
