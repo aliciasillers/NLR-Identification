@@ -17,6 +17,8 @@ set -u                                                                          
 module load conda/latest
 conda activate nlrenv
 
-faSize -detailed -tab ../Genome/farr1_phase1.fa > farr1.hapa.txt
+faSize -detailed -tab ../Genome/Nomenclature_Update/farr1_updated.fa > farr1.txt
 
-faSize -detailed -tab ../Genome/farr1_phase2.fa > farr1.hapb.txt
+#faSize -detailed -tab ../Genome/Nomenclature_Update/farr1_phase1_updated.fa > farr1.hapa.txt
+
+#faSize -detailed -tab ../Genome/Nomenclature_Update/farr1_phase2_updated.fa > farr1.hapb.txt
