@@ -7,6 +7,12 @@ library("htmlwidgets")
 # read in data
 
 # chromosome files
+chromfile <- read.delim("farr1.txt", sep = "\t", header = FALSE)
+chromfile <- chromfile %>% mutate(V1.5 = rep(1, length(chromfile[,1])), .after = V1) %>% filter(!grepl("^contig", V1))
+colnames(chromfile) <- c("V1", "V2", "V3")
+chromfile$V2 <- as.numeric(chromfile$V2)
+chromfile$V3 <- as.numeric(chromfile$V3)
+
 chromfilea <- read.delim("farr1.hapa.txt", sep = "\t", header = FALSE)
 chromfilea <- chromfilea %>% mutate(V1.5 = rep(1, length(chromfilea[,1])), .after = V1) %>% filter(!grepl("^contig", V1))
 colnames(chromfilea) <- c("V1", "V2", "V3")
@@ -51,6 +57,19 @@ xnlb$V2 <- paste0(xnlb$V2, "_B")
 nlrlocib <- rbind((cnlb %>% mutate(V5 = rep("cnl", length(cnlb[,1])))), (tnlb %>% mutate(V5 = rep("tnl", length(tnlb[,1])))), (nanlb %>% mutate(V5 = rep("nanl", length(nanlb[,1])))), (xnlb %>% mutate(V5 = rep("xnl", length(xnlb[,1])))))
 
 # gene files
+cnl <- read.delim("cnlgenes.bed", sep="\t", header = FALSE) %>% filter(!grepl("^contig", V1))
+cnl <- as.data.frame(cbind(cnl[,4], cnl[,1], cnl[,2], cnl[,3]))
+tnl <- read.delim("tnlgenes.bed", sep="\t", header = FALSE) %>% filter(!grepl("^contig", V1))
+tnl <- as.data.frame(cbind(tnl[,4], tnl[,1], tnl[,2], tnl[,3]))
+nanl <- read.delim("nanlgenes.bed", sep="\t", header = FALSE) %>% filter(!grepl("^contig", V1))
+nanl <- as.data.frame(cbind(nanl[,4], nanl[,1], nanl[,2], nanl[,3]))
+xnl <- read.delim("xnlgenes.bed", sep="\t", header = FALSE) %>% filter(!grepl("^contig", V1))
+xnl <- as.data.frame(cbind(xnl[,4], xnl[,1], xnl[,2], xnl[,3]))
+nlrgenes <- rbind((cnl %>% mutate(V5 = rep("cnl", length(cnl[,1])))), (tnl %>% mutate(V5 = rep("tnl", length(tnl[,1])))), (nanl %>% mutate(V5 = rep("nanl", length(nanl[,1])))))
+nlrgenes <- as.data.frame(nlrgenes)
+nlrgenes$V3 <- as.numeric(nlrgenes$V3)
+nlrgenes$V4 <- as.numeric(nlrgenes$V4)
+
 cnla <- read.delim("cnlgenesa.bed", sep="\t", header = FALSE) %>% filter(!grepl("^contig", V1))
 cnla <- as.data.frame(cbind(cnla[,4], cnla[,1], cnla[,2], cnla[,3]))
 cnla$V2 <- paste0(cnla$V2, "_A")
@@ -87,6 +106,7 @@ nlrgenesb$V4 <- as.numeric(nlrgenesb$V4)
 
 # run ChromoMap
 
+genes <- chromoMap(ch.files = list(chromfile), data.files = list(nlrgenes), data_based_color_map = TRUE, data_type = "categorical", data_colors = list(c("thistle", "lightgoldenrod1", "tomato")), chr_color = "black", legend = TRUE, lg_x = 20, lg_y = 150, n_win.factor = 2, export.options = TRUE)
 hapagenes <- chromoMap(ch.files = list(chromfilea), data.files = list(nlrgenesa), title = "NLR Genes In Royal Royce Haplotype A", data_based_color_map = TRUE, data_type = "categorical", data_colors = list(c("thistle", "lightgoldenrod1", "tomato")), chr_color = "black", legend = TRUE, lg_x = 20, lg_y = 150, n_win.factor = 2, export.options = TRUE)
 hapbgenes <- chromoMap(ch.files = list(chromfileb), data.files = list(nlrgenesb), title = "NLR Genes In Royal Royce Haplotype B", data_based_color_map = TRUE, data_type = "categorical", data_colors = list(c("thistle", "lightgoldenrod1", "tomato")), chr_color = "black", legend = TRUE, lg_x = 20, lg_y = 150, n_win.factor = 2, export.options = TRUE)
 bothhapgenes <- chromoMap(list(chromfilea, chromfileb), list(nlrgenesa, nlrgenesb), ploidy = 2, title = "NLR Gene Distribution Across The Royal Royce Genome", data_based_color_map = TRUE, data_type = "categorical", data_colors = list(c("thistle", "lightgoldenrod1", "tomato"), c("thistle", "lightgoldenrod1", "tomato")), chr_color = "black", legend = c(FALSE, TRUE), lg_x = 20, lg_y = 150, n_win.factor = 2, export.options = TRUE)
@@ -97,6 +117,7 @@ bothhaploci <- chromoMap(list(chromfilea, chromfileb), list(nlrlocia, nlrlocib),
 
 # save figures as html files
 
+saveWidget(genes, "chromoMap_genes.html")
 saveWidget(hapagenes, "chromoMap_hapA_genes.html")
 saveWidget(hapbgenes, "chromoMap_hapB_genes.html")
 saveWidget(bothhapgenes, "chromoMap_farr1_genes.html")
