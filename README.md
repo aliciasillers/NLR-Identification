@@ -1,6 +1,6 @@
 # NLR-Identification-and-Visualization
 
-This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the pipeline is being carried out separately for each haplotype of the strawberry genome.
+This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the analyses are being carried out using the octoploid strawberry reference genome as well as each haplotype phased version of the genome. 
 
 ## Conda Environment
 
@@ -33,3 +33,13 @@ Creates chromosome coordinate file needed for ChromoMap
 6. chromomap.sh
 
 Runs an R script to create figures showing loci and genes across the genome using the R package ChromoMap. These figures save in an html format that can be opened in any internet browser for an interactive display and can subsequently be saved as static images if desired. 
+
+## Further Analysis Options: Get Amino Acid Sequences
+
+7. getlist.sh
+
+Creates text documents with lists of protein IDs for each NLR class
+
+8. faidx.sh
+
+Uses protein IDs and a protein fasta file to return the amino acid sequence of each protein. These sequences can then be used for further analyses, such as functional domain prediction
