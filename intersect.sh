@@ -14,14 +14,7 @@
 module load bedtools2
 
 bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_updated.gene_models.gff -b nanl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > nanlgenes.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase1_updated.gene_models.gff -b nanla.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > nanlgenesa.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase2_updated.gene_models.gff -b nanlb.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > nanlgenesb.bed
 bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_updated.gene_models.gff -b cnl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > cnlgenes.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase1_updated.gene_models.gff -b cnla.bed | grep 'gene'  | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > cnlgenesa.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase2_updated.gene_models.gff -b cnlb.bed | grep 'gene'  | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > cnlgenesb.bed
 bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_updated.gene_models.gff -b tnl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > tnlgenes.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase1_updated.gene_models.gff -b tnla.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > tnlgenesa.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase2_updated.gene_models.gff -b tnlb.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > tnlgenesb.bed
 bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_updated.gene_models.gff -b xnl.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > xnlgenes.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase1_updated.gene_models.gff -b xnla.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > xnlgenesa.bed
-bedtools intersect -wa -a ../Genome/Nomenclature_Update/farr1_phase2_updated.gene_models.gff -b xnlb.bed | grep 'gene' | awk -F'\t|=|;' '{OFS="\t"} {print $1, $4, $5, $10}' > xnlgenesb.bed
+
