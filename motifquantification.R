@@ -44,6 +44,8 @@ motifs <- venn.diagram(
   cex = .6,
   fontface = "bold",
   fontfamily = "sans",
+  cat.default.pos = "outer",
+  cat.dist = c(0.15, 0.08, 0.08),
   cat.cex = 0.6,
   cat.fontface = "bold",
   cat.fontfamily = "sans",
