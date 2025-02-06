@@ -17,4 +17,4 @@ set -u                                                                          
 module load conda/latest
 conda activate nlrenv
 
-faSize -detailed -tab ../Genome/Nomenclature_Update/farr1_updated.fa > farr1.txt
+faSize -detailed -tab ../Genome/farr1.fa > farr1.txt

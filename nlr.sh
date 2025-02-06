@@ -13,4 +13,4 @@
 
 module load jdk
 
-java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/Nomenclature_Update/farr1_updated.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.out.txt -g nlr.out.gff -a nlr.motif.msa.fa -f ../Genome/Nomenclature_Update/farr1_updated.fa nlrs.fa 0 -t 4
+java -jar NLR-Annotator/NLR-Annotator-v2.1b.jar -i ../Genome/farr1.fa -x NLR-Annotator/src/mot.txt -y NLR-Annotator/src/store.txt -o nlr.out.txt -g nlr.out.gff -a nlr.motif.msa.fa -f ../Genome/farr1.fa nlrs.fa 0 -t 4
