@@ -28,7 +28,7 @@ nlrgenes$V4 <- as.numeric(nlrgenes$V4)
 
 # run ChromoMap
 
-genes <- chromoMap(ch.files = list(chromfile), data.files = list(nlrgenes), data_based_color_map = TRUE, data_type = "categorical", data_colors = list(c("thistle", "tomato", "lightgoldenrod1", "lightblue")), chr_color = "black", legend = TRUE, lg_x = 35, lg_y = 280, n_win.factor = 2, export.options = TRUE)
+genes <- chromoMap(ch.files = list(chromfile), data.files = list(nlrgenes), data_based_color_map = TRUE, data_type = "categorical", data_colors = list(c("thistle", "tomato", "lightgoldenrod1", "lightblue")), chr_color = "black", legend = TRUE, lg_x = 35, lg_y = 282, n_win.factor = 2, export.options = TRUE)
 
 # save figures as html files
 
