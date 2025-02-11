@@ -27,13 +27,13 @@ cnlloci <- as.list(cnlspecific$V2)
 tnlloci <- as.list(tnlspecific$V2)
 genloci <- as.list(general$V2)
 
-myCol <- c("mediumpurple3", "tomato2", "slategray1")
+myCol <- c("mediumpurple3", "firebrick3", "lightsteelblue2")
 motifs <- venn.diagram(
   x = list(cnlloci, tnlloci, genloci),
   category.names = c("CNL-specific" , "TNL-specific" , "General"),
-  filename = 'motif_venn_diagramm.png',
+  filename = NULL,
   output=TRUE,
-  imagetype="png",
+  imagetype="svg",
   height = 500, 
   width = 700, 
   resolution = 300,
@@ -41,14 +41,15 @@ motifs <- venn.diagram(
   lwd = 2,
   lty = 'blank',
   fill = myCol,
-  cex = .6,
+  cex = .8,
   fontface = "bold",
   fontfamily = "sans",
   cat.default.pos = "outer",
-  cat.dist = c(0.15, 0.08, 0.08),
-  cat.cex = 0.6,
+  cat.dist = c(-0.1, -0.1, -0.1),
+  cat.cex = 0.7,
   cat.fontface = "bold",
   cat.fontfamily = "sans",
   rotation = 1
 )
 
+ggsave(motifs, file = "motif_venn_diagram.svg", device = "svg")
