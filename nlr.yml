@@ -7,4 +7,5 @@ dependencies:
  - r-reshape
  - r-chromomap
  - r-venndiagram
+ - r-svglite
  - ucsc-fasize
