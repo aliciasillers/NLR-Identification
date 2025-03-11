@@ -1,6 +1,6 @@
 # NLR-Identification-and-Visualization
 
-This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the analyses are being carried out using the octoploid strawberry reference genome as well as each haplotype phased version of the genome. 
+This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the analyses are being carried out using the Farr1 octoploid strawberry reference genome. 
 
 ## Conda Environment
 
@@ -18,7 +18,7 @@ Runs NLR-Annotator and returns results in text and gff format. The text file lis
 
 3. nlrclass.sh
 
-Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NANLs), and other NLRs (XNLs). XNLs are likely either RNLs, which do not have unique motifs picked up by NLR-Annotator, or non-funcitonal/psuedogenes. Results are reported in separate bed files.
+Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NNLs), and other NLRs (XNLs). Results are reported in separate bed files.
 
 4. motifquantification.sh
 
