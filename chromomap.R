@@ -23,7 +23,7 @@ nnl <- read.delim("nanlgenes.bed", sep="\t", header = FALSE) %>% filter(!grepl("
 nnl <- as.data.frame(cbind(nnl[,4], nnl[,1], nnl[,2], nnl[,3]))
 partial <- read.delim("xnlgenes.bed", sep="\t", header = FALSE) %>% filter(!grepl("^contig", V1))
 partial <- as.data.frame(cbind(partial[,4], partial[,1], partial[,2], partial[,3]))
-nlrgenes <- rbind((cnl %>% mutate(V5 = rep("cnl", length(cnl[,1])))), (tnl %>% mutate(V5 = rep("tnl", length(tnl[,1])))), (rnl %>% mutate(V5 = rep("rnl", length(rnl[,1])))), (nnl %>% mutate(V5 = rep("nnl", length(nnl[,1])))), (partial %>% mutate(V5 = rep("partial", length(partial[,1])))))
+nlrgenes <- rbind((cnl %>% mutate(V5 = rep("CNL", length(cnl[,1])))), (tnl %>% mutate(V5 = rep("TNL", length(tnl[,1])))), (rnl %>% mutate(V5 = rep("RNL", length(rnl[,1])))), (nnl %>% mutate(V5 = rep("NNL", length(nnl[,1])))), (partial %>% mutate(V5 = rep("Partial", length(partial[,1])))))
 nlrgenes <- as.data.frame(nlrgenes)
 nlrgenes$V3 <- as.numeric(nlrgenes$V3)
 nlrgenes$V4 <- as.numeric(nlrgenes$V4)
