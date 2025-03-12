@@ -17,16 +17,16 @@ g <- nlr %>% filter(!grepl('motif_2,|motif_2$|motif_6|motif_16|motif_17', V7) & 
 #find nlrs present in neither and both data frames
 nnl <- rbind(ctg, ct)
 nnlbed <- cbind(nnl$V1, nnl$V4, nnl$V5, nnl$V2, nnl$V6, nnl$V3, nnl$V7)
-partial <- rbind(c, t, g)
-partialbed <- cbind(partial$V1, partial$V4, partial$V5, partial$V2, partial$V6, partial$V3, partial$V7)
-cnl <- cg
+other <- rbind(g)
+otherbed <- cbind(partial$V1, partial$V4, partial$V5, partial$V2, partial$V6, partial$V3, partial$V7)
+cnl <- rbind(c, cg)
 cnlbed <- cbind(cnl$V1, cnl$V4, cnl$V5, cnl$V2, cnl$V6, cnl$V3, cnl$V7)
-tnl <- tg
+tnl <- rbind(t, tg)
 tnlbed <- cbind(tnl$V1, tnl$V4, tnl$V5, tnl$V2, tnl$V6, tnl$V3, tnl$V7)
 
 #save data frames
 write.table(nnlbed, "nanl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
-write.table(partialbed, "xnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
+write.table(otherbed, "xnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(cnlbed, "cnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(tnlbed, "tnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 
