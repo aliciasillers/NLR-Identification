@@ -18,7 +18,7 @@ g <- nlr %>% filter(!grepl('motif_2,|motif_2$|motif_6|motif_16|motif_17', V7) & 
 nnl <- rbind(ctg, ct)
 nnlbed <- cbind(nnl$V1, nnl$V4, nnl$V5, nnl$V2, nnl$V6, nnl$V3, nnl$V7)
 other <- rbind(g)
-otherbed <- cbind(partial$V1, partial$V4, partial$V5, partial$V2, partial$V6, partial$V3, partial$V7)
+otherbed <- cbind(other$V1, other$V4, other$V5, other$V2, other$V6, other$V3, other$V7)
 cnl <- rbind(c, cg)
 cnlbed <- cbind(cnl$V1, cnl$V4, cnl$V5, cnl$V2, cnl$V6, cnl$V3, cnl$V7)
 tnl <- rbind(t, tg)
