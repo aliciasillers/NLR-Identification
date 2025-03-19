@@ -11,7 +11,9 @@
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=8:00:00
 
+#USAGE: filtergff.sh LISTFILE OUTPUTFILE
+
 module load bedops
 
-grep -f RPW8.txt ../Genome/farr1.gene_models.gff | grep 'mRNA' | gff2bed | awk -F'\t|=|;' '{print $1,$2,$3,$11}' > rnlgenes.bed
+grep -f $1 ../Genome/farr1.gene_models.gff | grep 'mRNA' | gff2bed | awk -F'\t|=|;' '{print $1,$2,$3,$11}' > $2
 
