@@ -38,7 +38,9 @@ Creates chromosome coordinate file needed for ChromoMap
 
 Runs an R script to create figures showing loci and genes across the genome using the R package ChromoMap. These figures save in an html format that can be opened in any internet browser for an interactive display and can subsequently be saved as static images if desired. 
 
-## Further Analysis Options: Get Amino Acid Sequences
+## Further Analysis Options
+
+### Domain Architecture Analysis
 
 8. getlist.sh
 
@@ -47,6 +49,8 @@ Creates text documents with lists of protein IDs for each NLR class
 9. faidx.sh
 
 Uses protein IDs and a protein fasta file to return the amino acid sequence of each protein. These sequences can then be used for further analyses, such as functional domain prediction
+
+### Phylogenetic Analysis
 
 10. align.sh
 
