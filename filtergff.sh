@@ -15,5 +15,5 @@
 
 module load bedops
 
-grep -f $1 ../Genome/farr1.gene_models.gff | grep 'mRNA' | gff2bed | awk -F'\t|=|;' '{print $1,$2,$3,$11}' > $2
+grep -f $1 ../Genome/farr1.gene_models_updated_2025-04-15.gff | grep 'mRNA' | gff2bed | awk -F'\t|=|;' '{OFS="\t"}{print $1,$2,$3,$11}' > $2
 
