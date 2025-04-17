@@ -47,3 +47,7 @@ Creates text documents with lists of protein IDs for each NLR class
 9. faidx.sh
 
 Uses protein IDs and a protein fasta file to return the amino acid sequence of each protein. These sequences can then be used for further analyses, such as functional domain prediction
+
+10. align.sh
+
+Aligns the full nucleotide sequences of all nlr loci returned by NLR-Annotator
