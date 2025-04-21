@@ -13,8 +13,8 @@
 
 module load samtools
 
-samtools faidx -r nanlgenes.txt ../Genome/farr1.protein.fa -o nanl.protein.fa
-samtools faidx -r cnlgenes.txt ../Genome/farr1.protein.fa -o cnl.protein.fa
-samtools faidx -r tnlgenes.txt ../Genome/farr1.protein.fa -o tnl.protein.fa
-samtools faidx -r xnlgenes.txt ../Genome/farr1.protein.fa -o xnl.protein.fa
-samtools faidx -r rnlgenes.txt ../Genome/farr1.protein.fa -o rnl.protein.fa
+samtools faidx -c -r nnlgenelist.txt ../Genome/farr1.protein.fa -o nanl.protein.fa
+samtools faidx -c -r cnlgenelist.txt ../Genome/farr1.protein.fa -o cnl.protein.fa
+samtools faidx -c -r tnlgenelist.txt ../Genome/farr1.protein.fa -o tnl.protein.fa
+samtools faidx -c -r xnlgenelist.txt ../Genome/farr1.protein.fa -o xnl.protein.fa
+samtools faidx -c -r rnlgenelist.txt ../Genome/farr1.protein.fa -o rnl.protein.fa

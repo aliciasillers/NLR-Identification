@@ -11,6 +11,8 @@
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=8:00:00
 
+#Usage: align.sh INFILE OUTFILE
+
 module load mafft
 
-mafft --auto nlrs.fa > nlr.aligned.fa
+mafft --auto $1 > $2

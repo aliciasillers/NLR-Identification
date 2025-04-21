@@ -15,7 +15,7 @@ rpw8 <- cnldf[grepl("RPW8",do.call(paste,cnldf)),]
 nbarc <- cnldf[grepl("NB-ARC",do.call(paste,cnldf)),]
 lrr <- cnldf[grepl("Leucine",do.call(paste,cnldf)),]
 rx <- cnldf[grepl("Rx",do.call(paste,cnldf)),]
-cc <- rbind(cc, rx)
+cc <- unique(rbind(cc, rx))
 
 #find nlrs present in different combinations of the dataframes
 
