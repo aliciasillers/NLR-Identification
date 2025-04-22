@@ -54,4 +54,4 @@ Uses protein IDs and a protein fasta file to return the amino acid sequence of e
 
 10. align.sh
 
-Aligns the full nucleotide sequences of all nlr loci returned by NLR-Annotator
+Aligns sequences of an input fasta file specified on command line; can be the nlr.fa file returned by nlr.sh or a fasta file of NBS/NB-ARC domain sequences
