@@ -8,4 +8,5 @@ dependencies:
  - r-chromomap
  - r-venndiagram
  - r-svglite
+ - r-bio3d
  - ucsc-fasize
