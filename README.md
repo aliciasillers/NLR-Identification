@@ -42,16 +42,34 @@ Runs an R script to create figures showing loci and genes across the genome usin
 
 ### Domain Architecture Analysis
 
-8. getlist.sh
+1. getlist.sh
 
 Creates text documents with lists of protein IDs for each NLR class
 
-9. faidx.sh
+2. faidx.sh
 
 Uses protein IDs and a protein fasta file to return the amino acid sequence of each protein. These sequences can then be used for further analyses, such as functional domain prediction
 
 ### Phylogenetic Analysis
 
-10. align.sh
+1. align.sh
 
 Aligns sequences of an input fasta file specified on command line; can be the nlr.fa file returned by nlr.sh or a fasta file of NBS/NB-ARC domain sequences
+
+### Gene Cluster Analysis
+
+1. windows.sh
+
+Creates a bed file with 200Kb sliding windows across the genome
+
+2. countoverlap.sh
+
+Returns a bed file with the number of NLR genes intersecting each sliding window
+
+3. filteroverlap.sh
+
+Removes windows with 0 genes or 1 gene
+
+3. getclusters.sh
+
+Returns a bed file with the genes overlapping each window
