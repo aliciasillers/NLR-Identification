@@ -72,4 +72,4 @@ Removes windows with 0 genes or 1 gene
 
 3. getclusters.sh
 
-Returns a bed file with the genes overlapping each window
+Returns a bed file with the genes overlapping each window. Duplicates resulting from the sliding windows may need to be removed. 
