@@ -4,7 +4,7 @@ library(tidyverse)
 cnl <- read.delim("cnlgenes.bed", header = FALSE, sep = '\t')
 tnl <- read.delim("tnlgenes.bed", header = FALSE, sep = '\t')
 rnl <- read.delim("rnlgenes.bed", header = FALSE, sep = '\t')
-nnl <- read.delim("nanlgenes.bed", header = FALSE, sep = '\t')
+nnl <- read.delim("nnlgenes.bed", header = FALSE, sep = '\t')
 partial <- read.delim("xnlgenes.bed", header = FALSE, sep = '\t')
 
 #plot

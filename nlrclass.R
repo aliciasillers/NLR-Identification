@@ -25,8 +25,7 @@ tnl <- rbind(t, tg)
 tnlbed <- cbind(tnl$V1, tnl$V4, tnl$V5, tnl$V2, tnl$V6, tnl$V3, tnl$V7)
 
 #save data frames
-write.table(nnlbed, "nanl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
-write.table(otherbed, "xnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
+write.table(nnlbed, "nnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
+write.table(otherbed, "other.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(cnlbed, "cnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(tnlbed, "tnl.bed", sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
-

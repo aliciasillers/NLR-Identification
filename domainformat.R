@@ -6,7 +6,7 @@ tnldom <- read.delim("tnl.interpro.tsv", sep = "\t", header = FALSE)
 tnldom <- tnldom[,c(1,6)]
 rnldom <- read.delim("rnl.interpro.tsv", sep = "\t", header = FALSE)
 rnldom <- rnldom[,c(1,6)]
-nnldom <- read.delim("nanl.interpro.tsv", sep = "\t", header = FALSE)
+nnldom <- read.delim("nnl.interpro.tsv", sep = "\t", header = FALSE)
 nnldom <- nnldom[,c(1,6)]
 xnldom <- read.delim("xnl.interpro.tsv", sep = "\t", header = FALSE)
 xnldom <- xnldom[,c(1,6)]
