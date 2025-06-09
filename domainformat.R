@@ -8,7 +8,7 @@ rnldom <- read.delim("rnl.interpro.tsv", sep = "\t", header = FALSE)
 rnldom <- rnldom[,c(1,6)]
 nnldom <- read.delim("nnl.interpro.tsv", sep = "\t", header = FALSE)
 nnldom <- nnldom[,c(1,6)]
-xnldom <- read.delim("xnl.interpro.tsv", sep = "\t", header = FALSE)
+xnldom <- read.delim("other.interpro.tsv", sep = "\t", header = FALSE)
 xnldom <- xnldom[,c(1,6)]
 
 cnl_dom_wide <- cnldom %>% 
@@ -45,4 +45,4 @@ write.table(cnl_dom_wide, "cnl_domains_wide.txt", sep = "\t", row.names = FALSE,
 write.table(tnl_dom_wide, "tnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(rnl_dom_wide, "rnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(nnl_dom_wide, "nnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
-write.table(xnl_dom_wide, "partial_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+write.table(xnl_dom_wide, "other_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
