@@ -1,4 +1,4 @@
-# NLR-Identification-and-Visualization
+# NLR-Identification
 
 This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the analyses are being carried out using the Farr1 octoploid strawberry reference genome. 
 
