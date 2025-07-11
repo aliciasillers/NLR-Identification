@@ -18,7 +18,7 @@ Runs NLR-Annotator and returns results in text and gff format. The text file lis
 
 1. nlrclass.sh
 
-Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NNLs), and other NLRs (XNLs). Results are reported in separate bed files.
+Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NNLs), and other NLRs (those lacking N-terminal signaling domains). Results are reported in separate bed files.
 
 2. motifquantification.sh
 
@@ -41,6 +41,20 @@ Uses protein IDs and a protein fasta file to return the amino acid sequence of e
 3. domainformat.sh
 
 After running interpro, this script will run an R script to put the data into a wide format, in which all the domains for one gene are in one row
+
+## Gene Classification
+
+1. nlrgeneclass.sh
+
+Runs five R scripts, each taking a different one of the wide-formatted domain architecture files and sorting the genes based on domain architecture. This returns lists of genes labeled with their classification based on motif analysis and their domain architecure based on interpro output
+
+2. compile.sh
+
+Creates lists of all genes with each domain architecture
+
+3. recategorize.sh
+
+Creates lists of genes in each class/subgroup based on motif and domain architecture information
 
 ## Visualize Genes Across the Genome
 
