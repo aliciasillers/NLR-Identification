@@ -15,4 +15,4 @@ awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tCNL"}' cnlgenes_resorted.bed > allnlrg
 awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tTNL"}' tnlgenes_resorted.bed >> allnlrgenes.bed
 awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tRNL"}' rnlgenes.bed >> allnlrgenes.bed
 awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tNNL"}' nnlgenes_resorted.bed >> allnlrgenes.bed
-awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tPartial"}' partialgenes_resorted.bed >> allnlrgenes.bed
+awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tOther"}' othergenes_resorted.bed >> allnlrgenes.bed
