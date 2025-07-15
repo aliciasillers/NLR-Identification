@@ -1,4 +1,4 @@
-#Shannon Entropy
+# Shannon Entropy
 
 1. orthofinder.sh
 
