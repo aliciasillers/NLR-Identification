@@ -13,7 +13,7 @@
 
 module load samtools
 
-samtools faidx -c -r rrA.txt nlr.protein.fa -o OrthoFiles/rrA.protein.fa
-samtools faidx -c -r rrB.txt nlr.protein.fa -o OrthoFiles/rrB.protein.fa
-samtools faidx -c -r rrC.txt nlr.protein.fa -o OrthoFiles/rrC.protein.fa
-samtools faidx -c -r rrD.txt nlr.protein.fa -o OrthoFiles/rrD.protein.fa
+samtools faidx -c -r ../rrA.txt ../nlr.protein.fa -o OrthoFiles/rrA.protein.fa
+samtools faidx -c -r ../rrB.txt ../nlr.protein.fa -o OrthoFiles/rrB.protein.fa
+samtools faidx -c -r ../rrC.txt ../nlr.protein.fa -o OrthoFiles/rrC.protein.fa
+samtools faidx -c -r ../rrD.txt ../nlr.protein.fa -o OrthoFiles/rrD.protein.fa
