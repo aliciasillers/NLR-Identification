@@ -1,4 +1,4 @@
-# Shannon Entropy
+# Shannon Entropy Analysis Steps
 
 1. orthofinder.sh
 
