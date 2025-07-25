@@ -10,7 +10,7 @@
 #SBATCH --mail-type=END,FAIL # Type of email notification- BEGIN,END,FAIL,ALL
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=4:00:00
-#SBATCH --array=1-31
+#SBATCH --array=1-40
 
 module load mafft
 
