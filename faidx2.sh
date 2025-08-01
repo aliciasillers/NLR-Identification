@@ -13,7 +13,8 @@
 
 module load samtools
 
-samtools faidx -c -r nnlgenes.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o nnl.protein1.fa
-samtools faidx -c -r cnlgenes.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o cnl.protein1.fa
-samtools faidx -c -r tnlgenes.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o tnl.protein1.fa
-samtools faidx -c -r othergenes.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o other.protein1.fa
+samtools faidx -c -r nnlgenelist.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o nnl.protein.fa
+samtools faidx -c -r cnlgenelist.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o cnl.protein.fa
+samtools faidx -c -r tnlgenelist.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o tnl.protein.fa
+samtools faidx -c -r othergenelist.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o other.protein.fa
+samtools faidx -c -r rnlgenelist.txt ../Genome/farr1.protein_updated_2025-07-31.fa -o rnl.protein.fa
