@@ -56,6 +56,14 @@ Creates lists of all genes with each domain architecture
 
 Creates lists of genes in each class/subgroup based on motif and domain architecture information
 
+4. filtergff.sh
+
+Uses final gene lists to create final bed files
+
+5. faidx2.sh
+
+Uses final gene lists to create final protein fasta files
+
 ## Visualize Genes Across the Genome
 
 1. chrsize.sh
