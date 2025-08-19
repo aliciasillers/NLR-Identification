@@ -36,7 +36,11 @@ Creates text documents with lists of protein IDs for each NLR class
 
 2. faidx.sh
 
-Uses protein IDs and a protein fasta file to return the amino acid sequence of each protein. These sequences can then be used for further analyses, such as functional domain prediction with interpro
+Uses protein IDs and a protein fasta file to return the amino acid sequence of each protein. These sequences can then be used for functional domain prediction with interpro
+
+```bash
+my_interproscan/interproscan-5.69-101.0/interproscan.sh -f TSV -appl COILS,Pfam -i cnl.protein.fa -b cnl.interpro
+```
 
 3. domainformat.sh
 
