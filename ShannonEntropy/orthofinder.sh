@@ -13,4 +13,4 @@
 
 module load orthofinder
 
-orthofinder -f OrthoFiles
+orthofinder -f OrthoFiles -I 1.1
