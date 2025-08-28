@@ -78,36 +78,3 @@ Creates chromosome coordinate file needed for ChromoMap
 
 Runs an R script to create figures showing loci and genes across the genome using the R package ChromoMap. These figures save in an html format that can be opened in any internet browser for an interactive display and can subsequently be saved as static images if desired. 
 
-## Further Analysis Options
-
-### Phylogenetic Analysis
-
-1. extractpos.sh 
-
-Creates a bed file of NB-ARC domain positions *requires interpro to have been run*
-
-2. extractseq.sh
-
-Gets amino acid sequences for NB-ARC domains
-
-3. align.sh
-
-Aligns sequences of an input fasta file specified on command line; can be the nlr.fa file returned by nlr.sh or a fasta file of NBS/NB-ARC domain sequences
-
-### Gene Cluster Analysis
-
-1. windows.sh
-
-Creates a bed file with 200Kb sliding windows across the genome
-
-2. countoverlap.sh
-
-Returns a bed file with the number of NLR genes intersecting each sliding window
-
-3. filteroverlap.sh
-
-Removes windows with 0 genes or 1 gene
-
-3. getclusters.sh
-
-Returns a bed file with the genes overlapping each window. Duplicates resulting from the sliding windows may need to be removed. 
