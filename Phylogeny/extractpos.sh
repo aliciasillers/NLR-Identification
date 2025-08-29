@@ -11,8 +11,8 @@
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=4:00:00
 
-grep NB-ARC cnl.interpro.tsv | cut -f1,7,8 > cnlNB.bed
-grep NB-ARC tnl.interpro.tsv | cut -f1,7,8 > tnlNB.bed
-grep NB-ARC rnl.interpro.tsv | cut -f1,7,8 > rnlNB.bed
-grep NB-ARC nnl.interpro.tsv | cut -f1,7,8 > nnlNB.bed
-grep NB-ARC xnl.interpro.tsv | cut -f1,7,8 > xnlNB.bed
+grep NB-ARC ../cnl.interpro.tsv | cut -f1,7,8 > cnlNB.bed
+grep NB-ARC ../tnl.interpro.tsv | cut -f1,7,8 > tnlNB.bed
+grep NB-ARC ../rnl.interpro.tsv | cut -f1,7,8 > rnlNB.bed
+grep NB-ARC ../nnl.interpro.tsv | cut -f1,7,8 > nnlNB.bed
+grep NB-ARC ../other.interpro.tsv | cut -f1,7,8 > otherNB.bed

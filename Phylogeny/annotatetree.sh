@@ -15,4 +15,4 @@ grep ">" cnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tCNL"}' | cat > NBSannot
 grep ">" tnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tTNL"}' | cat >> NBSannotationinfo.txt
 grep ">" rnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tRNL"}' | cat >> NBSannotationinfo.txt
 grep ">" nnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tNNL"}' | cat >> NBSannotationinfo.txt
-grep ">" xnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tOther"}' | cat >> NBSannotationinfo.txt
+grep ">" otherNB_Sequences.fasta | awk -F'>' '{print $2 "\tOther"}' | cat >> NBSannotationinfo.txt
