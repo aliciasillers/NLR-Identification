@@ -11,8 +11,8 @@
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=4:00:00
 
-awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tCNL"}' cnlgenes_resorted.bed > allnlrgenes.bed
-awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tTNL"}' tnlgenes_resorted.bed >> allnlrgenes.bed
-awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tRNL"}' rnlgenes.bed >> allnlrgenes.bed
-awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tNNL"}' nnlgenes_resorted.bed >> allnlrgenes.bed
-awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tOther"}' othergenes_resorted.bed >> allnlrgenes.bed
+awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tCNL"}' ../cnlgenes_resorted.bed > allnlrgenes.bed
+awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tTNL"}' ../tnlgenes_resorted.bed >> allnlrgenes.bed
+awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tRNL"}' ../rnlgenes.bed >> allnlrgenes.bed
+awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tNNL"}' ../nnlgenes_resorted.bed >> allnlrgenes.bed
+awk -F'\t' '{print $1"\t"$2"\t"$3"\t"$4"\tOther"}' ../othergenes_resorted.bed >> allnlrgenes.bed
