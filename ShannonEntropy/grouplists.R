@@ -1,7 +1,7 @@
 library("tidyverse")
 library("DBI")
 
-orthogroups <- read.delim("OrthoFiles/OrthoFinder/Results_Jun27/Orthogroups/Orthogroups.txt", header = FALSE, sep = "")
+orthogroups <- read.delim("OrthoFiles/OrthoFinder/Results_Aug19/Orthogroups/Orthogroups.txt", header = FALSE, sep = "")
 
 orthogroups <- sqlColumnToRownames(orthogroups, row.names = "V1")
 
@@ -17,7 +17,7 @@ rm.empty <- function(x){
 
 groups2 <- lapply(groups, rm.empty)
 
-groups3 <- Filter(function(x) length(x) > 19, groups2)
+groups3 <- Filter(function(x) length(x) > 14, groups2)
 
 for (i in 1:length(groups3)){
 	df <- data.frame(V1 = unlist(groups3[i]))
