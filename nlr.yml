@@ -10,3 +10,4 @@ dependencies:
  - r-svglite
  - r-bio3d
  - ucsc-fasize
+ - numpy
