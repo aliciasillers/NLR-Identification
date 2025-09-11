@@ -11,4 +11,4 @@
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=2:00:00
 
-cat OtherSpecies/fv.protein.fa OtherSpecies/fi.protein.fa ../rnl.protein.fa ../cnl.protein.fa ../tnl.protein.fa ../nnl.protein.fa ../other.protein.fa OtherSpecies/Brilliance/b1.protein.fa OtherSpecies/Brilliance/b2.protein.fa > allaaseqs.fa
+cat OtherSpecies/fv.protein.fa OtherSpecies/fi.protein.fa ../rnl.protein.fa ../cnl.protein.fa ../tnl.protein.fa ../nnl.protein.fa ../other.protein.fa OrthoFiles/brilliance1.protein.fa OrthoFiles/brilliance2.protein.fa OrthoFiles/moxie.protein.fa > allaaseqs.fa
