@@ -12,6 +12,10 @@ Returns a bed file with the number of NLR genes intersecting each sliding window
 
 Removes windows with 0 genes or 1 gene
 
-3. getclusters.sh
+4. getclusters.sh
 
 Returns a bed file with the genes overlapping each window. Duplicates resulting from the sliding windows may need to be removed.
+
+5. getclusterinfo.sh
+
+Returns a list of clusters with the number of genes in each cluster and which NLR subgroups are represented
