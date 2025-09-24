@@ -11,8 +11,8 @@
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
 #SBATCH --time=4:00:00
 
-grep ">" cnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tCNL"}' | cat > NBSannotationinfo.txt
-grep ">" tnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tTNL"}' | cat >> NBSannotationinfo.txt
-grep ">" rnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tRNL"}' | cat >> NBSannotationinfo.txt
-grep ">" nnlNB_Sequences.fasta | awk -F'>' '{print $2 "\tNNL"}' | cat >> NBSannotationinfo.txt
-grep ">" otherNB_Sequences.fasta | awk -F'>' '{print $2 "\tOther"}' | cat >> NBSannotationinfo.txt
+grep ">" cnlNB_Sequences.fa | awk -F'>' '{print $2 "\tCNL"}' | cat > NBSannotationinfo.txt
+grep ">" tnlNB_Sequences.fa | awk -F'>' '{print $2 "\tTNL"}' | cat >> NBSannotationinfo.txt
+grep ">" rnlNB_Sequences.fa | awk -F'>' '{print $2 "\tRNL"}' | cat >> NBSannotationinfo.txt
+grep ">" nnlNB_Sequences.fa | awk -F'>' '{print $2 "\tNNL"}' | cat >> NBSannotationinfo.txt
+grep ">" otherNB_Sequences.fa | awk -F'>' '{print $2 "\tOther"}' | cat >> NBSannotationinfo.txt

@@ -14,4 +14,4 @@
 module load conda/latest
 conda activate entropy
 
-Rscript --vanilla --verbose CL_AutoRefine.R -d Groups/ -p eco.tsv -e 5 -t 2
+Rscript --vanilla --verbose CL_AutoRefine.R -d Groups/ -p eco.tsv -e 5 -l 1.15 -t 2
