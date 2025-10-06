@@ -14,12 +14,12 @@ con <- consensus(aln)
 #names(ent$H)=con$seq
 #head(ent$freq)
 
-ent$H[ apply(ent$freq[21:22,],2,sum)>=0.6 ] = 0
+ent$H[ apply(ent$freq[21:22,],2,sum)>=0.5 ] = 0
 
 names(ent$H) <- seq_along(1:length(ent$H))
 
-png(paste0("RefinedTrees/", name, ".png"), width = 15, height = 8, units = "cm", res = 900)
-plot1 <- barplot(ent$H, ylab = "Entropy")
+png(paste0("RefinedTrees/", name, ".png"), width = 20, height = 12, units = "cm", res = 900)
+plot1 <- barplot(ent$H, ylab = "Entropy", xlab = "Alignment Position", ylim = c(0,3))
 print(plot1)
 dev.off()
 

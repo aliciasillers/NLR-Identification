@@ -48,7 +48,7 @@ option_list = list(
     make_option( c("-e", "--min_eco_overlap") , type = "numeric" , default=5, 
                help="min number of ecotypes for a new clade (overriden by max branch length)", metavar="number"),
   
-    make_option(c("-l", "--max_branch_length"), type="numeric", default=1.00, 
+    make_option(c("-l", "--max_branch_length"), type="numeric", default=0.50, 
               help="max allowed branch length (all longer branches will be cut)", metavar="number"),
   
     make_option(c("-m", "--min_branch_length"), type="numeric", default=0.05, 
@@ -247,7 +247,7 @@ refine_tree <- function(clade){
                 maa@unmasked@ranges@NAMES <- maa@unmasked@ranges@NAMES%>%str_remove(" ")
                 subset <- as(AAMultipleAlignment(unmasked(maa)[which(maa@unmasked@ranges@NAMES %in% ptree$label)]),"AAMultipleAlignment")
                 if ("-" %in% rownames(consensusMatrix(subset))){
-                  autoMasked <- maskGaps(subset, min.fraction = 1, min.block.width = 1) ## remove all-gap columns
+                  autoMasked <- maskGaps(subset, min.fraction = .9, min.block.width = 1) ## remove all-gap columns
                   MinAli <- as(autoMasked, "AAStringSet")
                 }else{MinAli<-as(subset, "AAStringSet")}
                   writeXStringSet(MinAli,filepath = paste0(directory,"/",ref_og,".subali.afa"),append = F,format = "fasta")
