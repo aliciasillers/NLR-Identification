@@ -20,10 +20,6 @@ Runs NLR-Annotator and returns results in text and gff format. The text file lis
 
 Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NNLs), and other NLRs (those lacking N-terminal signaling domains). Results are reported in separate bed files.
 
-2. motifquantification.sh
-
-Runs an R script that makes a venn diagram representing the number of loci with motifs in different class-based categories
-
 3. intersect.sh
 
 Intersects each bed file with the genome annotation and returns a bed file of genes and their coordinates
@@ -67,14 +63,3 @@ Uses final gene lists to create final bed files
 5. faidx2.sh
 
 Uses final gene lists to create final protein fasta files
-
-## Visualize Genes Across the Genome
-
-1. chrsize.sh
-
-Creates chromosome coordinate file needed for ChromoMap
-
-2. chromomap.sh
-
-Runs an R script to create figures showing loci and genes across the genome using the R package ChromoMap. These figures save in an html format that can be opened in any internet browser for an interactive display and can subsequently be saved as static images if desired. 
-
