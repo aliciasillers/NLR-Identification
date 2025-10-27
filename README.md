@@ -1,6 +1,6 @@
 # NLR-Identification
 
-This pipeline identifies predicted NLR loci using NLR-Annotator, sorts these loci into predicted NLR classes, identifies genes overlapping these loci, and visualizes this information across the genome using the ChromoMap R package. In these scripts, the analyses are being carried out using the Farr1 octoploid strawberry reference genome. 
+This repository contains the scripts used for analyses in the publication "Genome-wide analysis of the Nucleotide-Binding Leucine-Rich-Repeat gene family in strawberry uncovers putative novel domain architecture in the Rosaceae family." The following workflow outlines the process of identifying putative NLR genes and sorting these genes into groups based on association with the anciently diverged RNL, CNL, and TNL classes. Scripts for further analyses are in labeled subdirectories. In these scripts, the analyses are being carried out using the 'FaRR1' octoploid strawberry reference genome. 
 
 ## Conda Environment
 
