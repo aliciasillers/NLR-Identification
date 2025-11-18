@@ -14,5 +14,5 @@
 grep ">" cnlNB_Sequences.fa | awk -F'>' '{print $2 "\tCNL"}' | cat > NBSannotationinfo.txt
 grep ">" tnlNB_Sequences.fa | awk -F'>' '{print $2 "\tTNL"}' | cat >> NBSannotationinfo.txt
 grep ">" rnlNB_Sequences.fa | awk -F'>' '{print $2 "\tRNL"}' | cat >> NBSannotationinfo.txt
-grep ">" nnlNB_Sequences.fa | awk -F'>' '{print $2 "\tNNL"}' | cat >> NBSannotationinfo.txt
+grep ">" mnlNB_Sequences.fa | awk -F'>' '{print $2 "\tMNL"}' | cat >> NBSannotationinfo.txt
 grep ">" otherNB_Sequences.fa | awk -F'>' '{print $2 "\tOther"}' | cat >> NBSannotationinfo.txt

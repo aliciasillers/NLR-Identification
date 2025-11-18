@@ -16,6 +16,6 @@ module load bedtools2
 bedtools getfasta -fi ../cnl.protein.fa -bed cnlNB.bed -fo cnlNB_Sequences.fa
 bedtools getfasta -fi ../tnl.protein.fa -bed tnlNB.bed -fo tnlNB_Sequences.fa
 bedtools getfasta -fi ../rnl.protein.fa -bed rnlNB.bed -fo rnlNB_Sequences.fa
-bedtools getfasta -fi ../nnl.protein.fa -bed nnlNB.bed -fo nnlNB_Sequences.fa
+bedtools getfasta -fi ../mnl.protein.fa -bed mnlNB.bed -fo mnlNB_Sequences.fa
 bedtools getfasta -fi ../other.protein.fa -bed otherNB.bed -fo otherNB_Sequences.fa
 

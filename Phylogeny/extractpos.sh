@@ -14,5 +14,5 @@
 grep NB-ARC ../cnl.interpro.tsv | cut -f1,7,8 > cnlNB.bed
 grep NB-ARC ../tnl.interpro.tsv | cut -f1,7,8 > tnlNB.bed
 grep NB-ARC ../rnl.interpro.tsv | cut -f1,7,8 > rnlNB.bed
-grep NB-ARC ../nnl.interpro.tsv | cut -f1,7,8 > nnlNB.bed
+grep NB-ARC ../mnl.interpro.tsv | cut -f1,7,8 > mnlNB.bed
 grep NB-ARC ../other.interpro.tsv | cut -f1,7,8 > otherNB.bed
