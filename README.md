@@ -1,6 +1,6 @@
 # NLR-Identification
 
-This repository contains the scripts used for analyses in the publication "Genome-wide analysis of the Nucleotide-Binding Leucine-Rich-Repeat gene family in strawberry uncovers putative novel domain architecture in the Rosaceae family." The following workflow outlines the process of identifying putative NLR genes and sorting these genes into groups based on association with the anciently diverged RNL, CNL, and TNL classes. Scripts for further analyses are in labeled subdirectories. In these scripts, the analyses are being carried out using the 'FaRR1' octoploid strawberry reference genome. 
+This repository contains the scripts used for analyses in the publication "Genome-wide analysis of the NLR gene family in strawberry reveals novel immune receptor architecture in Rosaceae." The following workflow outlines the process of identifying putative NLR genes and sorting these genes into groups based on association with the anciently diverged RNL, CNL, and TNL classes. Scripts for further analyses are in labeled subdirectories. In these scripts, the analyses are being carried out using the 'FaRR1' octoploid strawberry reference genome. 
 
 ## Conda Environment
 
@@ -18,7 +18,7 @@ Runs NLR-Annotator and returns results in text and gff format. The text file lis
 
 1. nlrclass.sh
 
-Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Novel Architecture NLRs (NNLs), and other NLRs (those lacking N-terminal signaling domains). Results are reported in separate bed files.
+Runs an R script that looks for class-specific motifs and sorts NLR loci into CNLs, TNLs, Mixed Architecture NLRs (MNLs), and other NLRs (those lacking N-terminal signaling domains). Results are reported in separate bed files.
 
 3. intersect.sh
 
