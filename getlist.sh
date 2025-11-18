@@ -13,5 +13,5 @@
 
 sed 's/\r//g' cnlgenes.bed | awk '{print $4".1"}' > cnlgenes.txt
 sed 's/\r//g' tnlgenes.bed | awk '{print $4".1"}' > tnlgenes.txt
-sed 's/\r//g' nnlgenes.bed | awk '{print $4".1"}' > nnlgenes.txt
+sed 's/\r//g' mnlgenes.bed | awk '{print $4".1"}' > mnlgenes.txt
 sed 's/\r//g' othergenes.bed | awk '{print $4".1"}' > othergenes.txt

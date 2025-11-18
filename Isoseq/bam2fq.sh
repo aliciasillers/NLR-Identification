@@ -14,4 +14,4 @@
 module load samtools
 module load seqtk
 
-samtools bam2fq flnc.bam | seqtk seq -A > flnc.fa
+samtools bam2fq flnc.bam > moxie_flnc.fq

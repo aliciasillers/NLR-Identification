@@ -44,7 +44,7 @@ rn_all <- semi_join(rpw8, nbarc)
 notrn <- rbind(cc, tir, lrr)
 rn <- anti_join(rn_all, notrn) #da8
 
-#nnls
+#mnls
 ct_all <- semi_join(cc, tir)
 ct_notl <- anti_join(ct_all, lrr)
 ct <- anti_join(ct_notl, nbarc) #da9

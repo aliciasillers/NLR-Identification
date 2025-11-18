@@ -3,21 +3,15 @@ library(stringr)
 library(ggplot2)
 
 #read in files
-dndsraw <- read.delim("dNdS.tsv", header = FALSE, sep = '\t')
-tandem <- read.delim("dnds_tandem.tsv", header = FALSE, sep = '\t')
+dndsnlr <- read.delim("dndsall.txt", header = FALSE, sep = '\t')
 control <- read.csv("dnds_control.csv", header = FALSE)
 nlrs <- read.delim("allnlrgenes.bed", header = FALSE, sep = '\t')
 
-#reformat tandem to match other files
-tandem <- cbind(tandem[,1], tandem[,2], tandem[,5], tandem[,4], tandem[,3])
-
-#dn/ds calculation and filtering
-dndsraw <- dndsraw %>% mutate(V5 = V4/V3)
-dndsraw <- rbind(dndsraw, tandem)
-dndsraw$V5 <- as.numeric(dndsraw$V5)
-dndsraw$V3 <- as.numeric(dndsraw$V3)
-dndsfilt <- dndsraw %>% filter(V3 <= 3) %>% filter(V5 <= 6)
-control <- control %>% filter(V3 <= 3) %>% filter(V5 <= 6)
+dndsnlr$V5 <- as.numeric(dndsraw$V5)
+dndsnlr$V4 <- as.numeric(dndsraw$V4)
+dndsnlr$V3 <- as.numeric(dndsraw$V3)
+dndsfilt <- dndsnlr %>% filter(V4 <= 3) %>% filter(V5 <= 6)
+control <- control %>% filter(V4 <= 3) %>% filter(V5 <= 6)
 
 #attach nlr subgroup info
 dndsjoin1 <- left_join(dndsfilt, nlrs, by = join_by(V1 == V4))
@@ -30,15 +24,13 @@ dndsclean <- dndsclean[,1:6]
 #mean dn/ds calculations
 mean(dndsclean$V5)
 aggregate(V5~V6, data = dndsclean, mean)
-aggregate(V5~V6, data = dndsclean, median)
-aggregate(V5~V6, data = dndsclean, max)
-aggregate(V3~V6, data = dndsclean, max)
+aggregate(V5~V6, data = control, mean)
 
 #add control data
 dnds <- rbind(dndsclean, control)
 
 #plot
 png("dnds.png", width = 20, height = 10, units = "cm", res = 900)
-plot1 <- ggplot(dnds, aes(x = factor(V6, level = c("RNL", "CNL", "TNL", "NNL", "Other", "CYP", "ACO", "OGDH")), y = V5, fill = factor(V6, level = c("RNL", "CNL", "TNL", "NNL", "Other", "CYP", "ACO", "OGDH")))) + geom_violin() + geom_jitter(width = 0.1, alpha = 0.3, size = 0.8) + scale_fill_manual(values = c(CNL = "thistle", TNL = "tomato", RNL = "lavenderblush", NNL ="goldenrod1", Other = "lightblue")) + labs(x = "", y = "dN/dS") + theme_minimal() + theme(legend.position="none")
+plot1 <- ggplot(dnds, aes(x = factor(V6, level = c("RNL", "CNL", "TNL", "MNL", "Other", "CYP", "ACO", "OGDH")), y = V5, fill = factor(V6, level = c("RNL", "CNL", "TNL", "MNL", "Other", "CYP", "ACO", "OGDH")))) + geom_violin() + geom_jitter(width = 0.1, alpha = 0.3, size = 0.8) + scale_fill_manual(values = c(CNL = "thistle", TNL = "tomato", RNL = "lavenderblush", MNL ="goldenrod1", Other = "lightblue")) + labs(x = "", y = "dN/dS") + theme_minimal() + theme(legend.position="none")
 print(plot1)
 dev.off()

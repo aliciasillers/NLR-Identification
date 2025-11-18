@@ -6,8 +6,8 @@ tnldom <- read.delim("tnl.interpro.tsv", sep = "\t", header = FALSE)
 tnldom <- tnldom[,c(1,6)]
 rnldom <- read.delim("rnl.interpro.tsv", sep = "\t", header = FALSE)
 rnldom <- rnldom[,c(1,6)]
-nnldom <- read.delim("nnl.interpro.tsv", sep = "\t", header = FALSE)
-nnldom <- nnldom[,c(1,6)]
+mnldom <- read.delim("mnl.interpro.tsv", sep = "\t", header = FALSE)
+mnldom <- mnldom[,c(1,6)]
 xnldom <- read.delim("other.interpro.tsv", sep = "\t", header = FALSE)
 xnldom <- xnldom[,c(1,6)]
 
@@ -29,7 +29,7 @@ rnl_dom_wide <- rnldom %>%
   ungroup() %>%
   pivot_wider(names_from = domain, values_from = V6)
 
-nnl_dom_wide <- nnldom %>%
+mnl_dom_wide <- mnldom %>%
   group_by(V1) %>%
   mutate(domain = row_number()) %>%
   ungroup() %>%
@@ -44,5 +44,5 @@ xnl_dom_wide <- xnldom %>%
 write.table(cnl_dom_wide, "cnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(tnl_dom_wide, "tnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(rnl_dom_wide, "rnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
-write.table(nnl_dom_wide, "nnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+write.table(mnl_dom_wide, "mnl_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
 write.table(xnl_dom_wide, "other_domains_wide.txt", sep = "\t", row.names = FALSE, col.names = FALSE, quote = FALSE)

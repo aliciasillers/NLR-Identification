@@ -37,7 +37,7 @@ cn_all <- anti_join(cn_all, notcnl)
 cn <- anti_join(cn_all, lrr) #da5
 cnl <- semi_join(cn_all, lrr) #da6
 
-#nnls
+#mnls
 ct_all <- semi_join(cc, tir)
 ct_notl <- anti_join(ct_all, lrr)
 ct <- anti_join(ct_notl, nbarc) #da9
