@@ -9,7 +9,7 @@ Creates a bed file of NB-ARC domain positions *requires interpro to have been ru
 Gets amino acid sequences for NB-ARC domains
 
 ```
-cat rnlNB_Sequences.fa cnlNB_Sequences.fa tnlNB_Sequences.fa nnlNB_Sequences.fa otherNB_Sequences.fa > nlrNB_Sequences.fa
+cat rnlNB_Sequences.fa cnlNB_Sequences.fa tnlNB_Sequences.fa mnlNB_Sequences.fa otherNB_Sequences.fa > nlrNB_Sequences.fa
 ```
 
 3. align.sh
