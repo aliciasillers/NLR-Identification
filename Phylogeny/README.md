@@ -2,7 +2,7 @@
 
 1. extractpos.sh
 
-Creates a bed file of NB-ARC domain positions *requires interpro to have been run*
+Creates a bed file of NB-ARC domain positions *requires interpro to have been run
 
 2. extractseq.sh
 
