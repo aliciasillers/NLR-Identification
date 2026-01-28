@@ -1,6 +1,6 @@
 # NLR-Identification
 
-This repository contains the scripts used for analyses in the publication "Genome-wide analysis of the NLR gene family in strawberry reveals novel immune receptor architecture in Rosaceae." The following workflow outlines the process of identifying putative NLR genes and sorting these genes into groups based on association with the anciently diverged RNL, CNL, and TNL classes. Scripts for further analyses are in labeled subdirectories. In these scripts, the analyses are being carried out using the 'FaRR1' octoploid strawberry reference genome. 
+This repository contains the scripts used for analyses in the publication "Genome-wide analysis of the NLR gene family in strawberry reveals a novel immune receptor architecture in Rosaceae." The following workflow outlines the process of identifying putative NLR genes and sorting these genes into groups based on association with the anciently diverged RNL, CNL, and TNL classes. Scripts for further analyses are in labeled subdirectories. In these scripts, the analyses are being carried out using the 'FaRR1' octoploid strawberry reference genome. 
 
 ## Conda Environment
 
