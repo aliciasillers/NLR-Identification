@@ -3,7 +3,7 @@
 #SBATCH --job-name=filtergff
 #SBATCH --ntasks=4 # Number of cores
 #SBATCH --nodes=1 # Ensure that all cores are on one machine
-#SBATCH --mem=20G # Memory pool for all cores in MB (see also --mem-per-cpu)
+#SBATCH --mem=24G # Memory pool for all cores in MB (see also --mem-per-cpu)
 #SBATCH --partition=bmh # Partition to submit to
 #SBATCH --output=filtergff.out # File to which STDOUT will be written
 #SBATCH --error=filtergff.err # File to which STDERR will be written
