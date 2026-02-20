@@ -2,7 +2,7 @@
 
 1. extractpos.sh
 
-Creates a bed file of NB-ARC domain positions *requires interpro to have been run
+Creates a bed file of NB-ARC domain positions *requires interpro to have been run on final gene lists
 
 2. extractseq.sh
 
@@ -20,6 +20,10 @@ Aligns sequences of an input fasta file specified on command line
 align.sh nlrNB_Sequences.fa nlrNB_aln.fa
 ```
 
-4. annotatetree.sh
+4. raxml.sh
+
+Generates a maximum likelihood phylogenetic tree with bootstrap values
+
+5. annotatetree.sh
 
 Generates annotation info for ITOL
