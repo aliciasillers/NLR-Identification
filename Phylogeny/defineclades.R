@@ -114,3 +114,5 @@ length(desc_list[[as.character(n)]])
 }))
 
 write.csv(results, "NLR_enriched_clades.csv", row.names = FALSE)
+
+write.tree(tree, file="nlrNB.raxml.support.rooted.labeled.nwk")
