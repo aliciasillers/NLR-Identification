@@ -1,0 +1,10 @@
+channels:
+ - conda-forge
+ - bioconda
+ - defaults
+dependencies:
+ - r-tidyverse
+ - r-ape
+ - r-phytools
+ - r-data.table
+ - r-future.apply
