@@ -115,4 +115,64 @@ length(desc_list[[as.character(n)]])
 
 write.csv(results, "NLR_enriched_clades.csv", row.names = FALSE)
 
-write.tree(tree, file="nlrNB.raxml.support.rooted.labeled.nwk")
+tree <- ladderize(tree, right = FALSE)
+
+type_colors <- c(
+ "RNL" = "#ffdfea",
+ "Rx-like CNL" = "#8f638f",
+ "non-Rx CNL" = "#D8BFD8",
+ "TNL" = "#FF6347",
+ "MNL"  = "#FFC125",
+ "Other" = "#ADD8E6"
+)
+
+get_itol_range <- function(tree, node, label, color){
+clade <- tryCatch(extract.clade(tree, node), error = function(e) NULL)
+if(is.null(clade) || length(clade$tip.label) == 0){
+ warning(paste("No descendants for node:", node))
+ return(NULL)
+}
+clade_tips <- clade$tip.label
+ordered_tips <- tree$tip.label
+idx <- which(ordered_tips %in% clade_tips)
+if(length(idx) == 0){
+ warning(paste("Tips not found for node:", node))
+ return(NULL)
+}
+start_tip <- ordered_tips[min(idx)]
+end_tip <- ordered_tips[max(idx)]
+data.frame(
+ start = start_tip,
+ end = end_tip,
+ color = color,
+ label = label,
+ stringsAsFactors = FALSE,
+ row.names = NULL)
+}
+
+itol_ranges <- results %>%
+  rowwise() %>%
+  do(
+    get_itol_range(
+      tree,
+      node  = .$node,
+      label = .$subgroup,
+      color = type_colors[.$subgroup]
+    )
+  ) %>%
+  ungroup() %>%
+  filter(!is.na(start))
+
+outfile <- "nlr_clade_annotation.txt"
+
+writeLines(c(
+ "DATASET_RANGE",
+ "SEPARATOR TAB",
+ "DATASET_LABEL\tEnriched_clades",
+ "COLOR\t#000000",
+ "RANGE_TYPE\tbox",
+ "RANGE_COVER\tlabel",
+ "DATA"
+), outfile)
+
+write.table(itol_ranges, outfile, sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE, append = TRUE)
