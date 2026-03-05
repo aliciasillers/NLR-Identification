@@ -9,7 +9,7 @@
 #SBATCH --error=meme.err #  File to which STDERR will be written
 #SBATCH --mail-type=END,FAIL # Type of email notification- BEGIN,END,FAIL,ALL
 #SBATCH --mail-user=asillers@ucdavis.edu # Email to which notifications will be$
-#SBATCH --time=8:00:00
+#SBATCH --time=2:00:00
 
 module load meme
 
